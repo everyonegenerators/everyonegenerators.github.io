@@ -224,3 +224,40 @@ footer {
     max-width: 40px;
     margin-right: 8px;
 }
+
+/* Убираем выделение со всех кнопок и элементов управления */
+.lang-switcher button,
+.theme-switcher button,
+.logo-link,
+#generators-menu a {
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Фиксируем размер флагов и запрещаем им сдвигаться */
+.lang-switcher button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    /* Фиксированная минимальная ширина, чтобы кнопки не прыгали */
+    min-width: 70px;
+    justify-content: center;
+}
+
+.lang-switcher button img {
+    width: 20px;
+    height: 14px;
+    flex-shrink: 0;         /* запрещаем сжиматься */
+    object-fit: cover;
+    display: block;
+}
+
+/* Если используете SVG внутри кнопок, добавьте и для них */
+.lang-switcher button svg {
+    width: 20px;
+    height: 14px;
+    flex-shrink: 0;
+    display: block;
+}
