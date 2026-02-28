@@ -46,10 +46,11 @@ self.addEventListener('install', event => {
         console.log('Кэширование ресурсов');
         return cache.addAll(urlsToCache);
       })
+      .then(() => self.skipWaiting()) // Немедленная активация нового воркера
   );
 });
 
-// Активация и удаление старых кэшей
+// Активация: удаление старых кэшей и захват управления страницами
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -61,12 +62,32 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => clients.claim()) // Немедленный контроль над всеми открытыми вкладками
   );
 });
 
-// Стратегия кэширования: сначала кэш, потом сеть (для статики)
+// Стратегия кэширования:
+// - Для HTML-страниц (навигационных запросов) — сначала сеть, потом кэш (актуальный контент)
+// - Для остальных ресурсов — сначала кэш, потом сеть (скорость и офлайн-доступ)
 self.addEventListener('fetch', event => {
+  // Если это запрос навигации (переход по ссылке, обновление страницы)
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request) // Пытаемся загрузить с сервера
+        .then(response => {
+          // Если успешно, кэшируем новую версию страницы (опционально)
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseClone);
+          });
+          return response;
+        })
+        .catch(() => caches.match(event.request)) // Если сеть недоступна, берём из кэша
+    );
+    return;
+  }
+
+  // Для всех остальных запросов (CSS, JS, картинки и т.д.) — Cache First
   event.respondWith(
     caches.match(event.request)
       .then(response => {
