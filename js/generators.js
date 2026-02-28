@@ -1,93 +1,99 @@
-const Generators = {
-    // Список доступных генераторов (ключи должны совпадать с ключами в locales)
-    list: ['password', 'color', 'name', 'number'],
-
-    password: {
-        render(container) {
-            container.innerHTML = `
-                <h2>${I18n.t('generators.password.name')}</h2>
-                <p>${I18n.t('generators.password.description')}</p>
-                <div class="generator-form">
-                    <label>${I18n.t('password.length_label')} <input type="number" id="pass-length" min="4" max="64" value="12"></label><br>
-                    <label><input type="checkbox" id="pass-numbers" checked> ${I18n.t('password.include_numbers')}</label><br>
-                    <label><input type="checkbox" id="pass-symbols" checked> ${I18n.t('password.include_symbols')}</label><br>
-                    <button id="generate-password">${I18n.t('password.generate_button')}</button>
-                </div>
-                <div class="result" id="password-result"></div>
-            `;
-            document.getElementById('generate-password').addEventListener('click', () => {
-                const length = parseInt(document.getElementById('pass-length').value, 10);
-                const useNumbers = document.getElementById('pass-numbers').checked;
-                const useSymbols = document.getElementById('pass-symbols').checked;
-                const pwd = Utils.randomPassword(length, useNumbers, useSymbols);
-                document.getElementById('password-result').innerHTML = `<strong>${I18n.t('password.result_label')}</strong> ${pwd}`;
-            });
-        }
+,
+    "fact": {
+        "generate_button": "Случайный факт",
+        "result_label": "Факт:",
+        "list": [
+            "В теле человека достаточно железа, чтобы сделать гвоздь длиной 7 см.",
+            "Осьминоги имеют три сердца.",
+            "Бананы — это ягоды, а клубника — нет.",
+            "Группа крови влияет на здоровье и характер.",
+            "Самое длинное название места в мире — Тауматавакатангихангакоауауотаматеатурипукакапикимаунгахоронукупокаифенуакитанатаху (Новая Зеландия).",
+            "В Швейцарии запрещено держать только одну морскую свинку — им нужна компания.",
+            "Коровы имеют лучших друзей и могут испытывать стресс при разлуке.",
+            "Австралия шире, чем Луна.",
+            "Хот-дог был изобретён в Германии.",
+            "Пауки могут летать на паутине, используя статическое электричество."
+        ]
     },
-
-    color: {
-        render(container) {
-            container.innerHTML = `
-                <h2>${I18n.t('generators.color.name')}</h2>
-                <p>${I18n.t('generators.color.description')}</p>
-                <button id="generate-color">${I18n.t('color.generate_button')}</button>
-                <div class="result" id="color-result"></div>
-            `;
-            document.getElementById('generate-color').addEventListener('click', () => {
-                const color = Utils.randomHexColor();
-                document.getElementById('color-result').innerHTML = `
-                    <strong>${I18n.t('color.result_label')}</strong> ${color}
-                    <div style="width:50px; height:50px; background:${color}; border:1px solid #000;"></div>
-                `;
-            });
-        }
+    "compliment": {
+        "generate_button": "Сделать комплимент",
+        "result_label": "Комплимент:",
+        "list": [
+            "У вас отличное чувство юмора!",
+            "Вы сегодня прекрасно выглядите!",
+            "Ваша улыбка ослепительна!",
+            "Вы очень умны и находчивы!",
+            "С вами легко и приятно общаться!",
+            "Вы настоящий друг!",
+            "У вас золотое сердце!",
+            "Вы полны энергии и энтузиазма!",
+            "Ваше мнение очень ценно!",
+            "Вы уникальны и неповторимы!"
+        ]
     },
-
-    name: {
-        render(container) {
-            container.innerHTML = `
-                <h2>${I18n.t('generators.name.name')}</h2>
-                <p>${I18n.t('generators.name.description')}</p>
-                <div class="generator-form">
-                    <label>${I18n.t('name.gender_label')}</label>
-                    <select id="name-gender">
-                        <option value="male">${I18n.t('name.male')}</option>
-                        <option value="female">${I18n.t('name.female')}</option>
-                    </select><br>
-                    <button id="generate-name">${I18n.t('name.generate_button')}</button>
-                </div>
-                <div class="result" id="name-result"></div>
-            `;
-            document.getElementById('generate-name').addEventListener('click', () => {
-                const gender = document.getElementById('name-gender').value;
-                // Простая логика: возьмём случайные имена из заранее подготовленных массивов (можно вынести в переводы или отдельный JSON)
-                const maleNames = ['Александр', 'Дмитрий', 'Максим', 'Иван', 'Сергей'];
-                const femaleNames = ['Анна', 'Елена', 'Ольга', 'Татьяна', 'Мария'];
-                const names = gender === 'male' ? maleNames : femaleNames;
-                const name = names[Math.floor(Math.random() * names.length)];
-                document.getElementById('name-result').innerHTML = `<strong>${I18n.t('name.result_label')}</strong> ${name}`;
-            });
-        }
+    "toast": {
+        "generate_button": "Произнести тост",
+        "result_label": "Тост:",
+        "list": [
+            "За любовь!",
+            "За здоровье!",
+            "За успех!",
+            "За дружбу!",
+            "За тех, кто в море!",
+            "За родителей!",
+            "За исполнение желаний!",
+            "За мир во всём мире!",
+            "За этот прекрасный вечер!",
+            "За нас!"
+        ]
     },
-
-    number: {
-        render(container) {
-            container.innerHTML = `
-                <h2>${I18n.t('generators.number.name')}</h2>
-                <p>${I18n.t('generators.number.description')}</p>
-                <div class="generator-form">
-                    <label>${I18n.t('number.min_label')} <input type="number" id="num-min" value="1"></label><br>
-                    <label>${I18n.t('number.max_label')} <input type="number" id="num-max" value="100"></label><br>
-                    <button id="generate-number">${I18n.t('number.generate_button')}</button>
-                </div>
-                <div class="result" id="number-result"></div>
-            `;
-            document.getElementById('generate-number').addEventListener('click', () => {
-                const min = parseInt(document.getElementById('num-min').value, 10);
-                const max = parseInt(document.getElementById('num-max').value, 10);
-                const num = Utils.randomInt(min, max);
-                document.getElementById('number-result').innerHTML = `<strong>${I18n.t('number.result_label')}</strong> ${num}`;
-            });
-        }
+    "nickname": {
+        "style_label": "Стиль:",
+        "gamer": "Игровой",
+        "fantasy": "Фэнтези",
+        "funny": "Смешной",
+        "generate_button": "Сгенерировать никнейм",
+        "result_label": "Никнейм:"
+    },
+    "recipe": {
+        "generate_button": "Случайный рецепт",
+        "result_label": "Рецепт:",
+        "list": [
+            "Омлет с сыром и зеленью",
+            "Паста карбонара",
+            "Цезарь с курицей",
+            "Борщ украинский",
+            "Плов узбекский",
+            "Пицца Маргарита",
+            "Суп-пюре из тыквы",
+            "Блинчики с творогом",
+            "Куриные крылышки BBQ",
+            "Шарлотка яблочная"
+        ]
+    },
+    "task": {
+        "generate_button": "Случайное задание",
+        "result_label": "Задание:",
+        "list": [
+            "Прочитать 10 страниц книги",
+            "Сделать зарядку",
+            "Позвонить родным",
+            "Выучить 5 новых слов",
+            "Посмотреть обучающее видео",
+            "Написать благодарность другу",
+            "Прибраться на столе",
+            "Съесть фрукт",
+            "Помедитировать 5 минут",
+            "Улыбнуться себе в зеркало"
+        ]
+    },
+    "movie": {
+        "genre_label": "Жанр:",
+        "any": "Любой",
+        "comedy": "Комедия",
+        "drama": "Драма",
+        "action": "Боевик",
+        "sci-fi": "Фантастика",
+        "generate_button": "Случайный фильм",
+        "result_label": "Фильм:"
     }
-};

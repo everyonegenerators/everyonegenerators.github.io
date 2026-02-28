@@ -45,4 +45,103 @@
         "generate_button": "Random number",
         "result_label": "Result:"
     }
+	,
+    "fact": {
+        "generate_button": "Random Fact",
+        "result_label": "Fact:",
+        "list": [
+            "The human body has enough iron to make a 7 cm nail.",
+            "Octopuses have three hearts.",
+            "Bananas are berries, but strawberries aren't.",
+            "Blood type affects health and personality.",
+            "The longest place name in the world is Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu (New Zealand).",
+            "In Switzerland, it's illegal to own just one guinea pig — they need company.",
+            "Cows have best friends and can get stressed when separated.",
+            "Australia is wider than the moon.",
+            "The hot dog was invented in Germany.",
+            "Spiders can fly using their silk and static electricity."
+        ]
+    },
+    "compliment": {
+        "generate_button": "Give Compliment",
+        "result_label": "Compliment:",
+        "list": [
+            "You have a great sense of humor!",
+            "You look wonderful today!",
+            "Your smile is dazzling!",
+            "You are very smart and resourceful!",
+            "You are easy and pleasant to talk to!",
+            "You are a true friend!",
+            "You have a heart of gold!",
+            "You are full of energy and enthusiasm!",
+            "Your opinion is very valuable!",
+            "You are unique and unrepeatable!"
+        ]
+    },
+    "toast": {
+        "generate_button": "Make a Toast",
+        "result_label": "Toast:",
+        "list": [
+            "To love!",
+            "To health!",
+            "To success!",
+            "To friendship!",
+            "To those at sea!",
+            "To parents!",
+            "To wishes coming true!",
+            "To world peace!",
+            "To this wonderful evening!",
+            "To us!"
+        ]
+    },
+    "nickname": {
+        "style_label": "Style:",
+        "gamer": "Gamer",
+        "fantasy": "Fantasy",
+        "funny": "Funny",
+        "generate_button": "Generate Nickname",
+        "result_label": "Nickname:"
+    },
+    "recipe": {
+        "generate_button": "Random Recipe",
+        "result_label": "Recipe:",
+        "list": [
+            "Cheese and herb omelette",
+            "Pasta carbonara",
+            "Chicken Caesar salad",
+            "Ukrainian borscht",
+            "Uzbek pilaf",
+            "Margherita pizza",
+            "Pumpkin soup",
+            "Cottage cheese pancakes",
+            "BBQ chicken wings",
+            "Apple charlotte"
+        ]
+    },
+    "task": {
+        "generate_button": "Random Task",
+        "result_label": "Task:",
+        "list": [
+            "Read 10 pages of a book",
+            "Do some exercise",
+            "Call your family",
+            "Learn 5 new words",
+            "Watch an educational video",
+            "Write a thank you note to a friend",
+            "Tidy up your desk",
+            "Eat a fruit",
+            "Meditate for 5 minutes",
+            "Smile at yourself in the mirror"
+        ]
+    },
+    "movie": {
+        "genre_label": "Genre:",
+        "any": "Any",
+        "comedy": "Comedy",
+        "drama": "Drama",
+        "action": "Action",
+        "sci-fi": "Sci-Fi",
+        "generate_button": "Random Movie",
+        "result_label": "Movie:"
+    }
 }
