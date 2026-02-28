@@ -261,3 +261,7 @@ footer {
     flex-shrink: 0;
     display: block;
 }
+
+.lang-switcher button {
+    width: 80px; /* или другая фиксированная ширина */
+}
