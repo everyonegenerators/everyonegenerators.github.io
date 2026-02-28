@@ -170,5 +170,11 @@
         "sci-fi": "Sci-Fi",
         "generate_button": "Random Movie",
         "result_label": "Movie:"
+    },
+    "404": {
+        "title": "404",
+        "message": "Page not found",
+        "description": "Sorry, this page doesn't exist.",
+        "button": "Back to home"
     }
 }
