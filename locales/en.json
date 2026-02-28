@@ -19,6 +19,34 @@
         "number": {
             "name": "Random Number",
             "description": "Get a random number in range"
+        },
+        "fact": {
+            "name": "Random Fact",
+            "description": "Learn something new and interesting"
+        },
+        "compliment": {
+            "name": "Compliments",
+            "description": "Cheer yourself or a friend up"
+        },
+        "toast": {
+            "name": "Toasts",
+            "description": "For celebrations and parties"
+        },
+        "nickname": {
+            "name": "Nickname Generator",
+            "description": "Create a nickname for games and social media"
+        },
+        "recipe": {
+            "name": "Random Recipe",
+            "description": "What's for dinner?"
+        },
+        "task": {
+            "name": "Random Task",
+            "description": "What to do right now?"
+        },
+        "movie": {
+            "name": "Random Movie",
+            "description": "What to watch tonight?"
         }
     },
     "password": {
