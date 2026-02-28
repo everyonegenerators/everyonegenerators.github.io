@@ -249,9 +249,12 @@ footer {
 .lang-switcher button img {
     width: 20px;
     height: 14px;
-    flex-shrink: 0;         /* запрещаем сжиматься */
+    flex-shrink: 0;
     object-fit: cover;
     display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* Если используете SVG внутри кнопок, добавьте и для них */
