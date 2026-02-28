@@ -1,1 +1,0 @@
-# everyonegenerators.github.io
