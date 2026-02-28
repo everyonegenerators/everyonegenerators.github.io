@@ -2,20 +2,107 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Title (важно для SEO) -->
     <title>Everyone Generators</title>
+    
+    <!-- PWA manifest -->
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Универсальные метатеги для мобильных платформ -->
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Everyone Gen">
+    <meta name="application-name" content="Everyone Generators">
+    
+    <!-- Цвета темы для браузеров и мобильных ОС -->
     <meta name="theme-color" content="#4a90e2">
+    <meta name="msapplication-TileColor" content="#4a90e2">
+    <meta name="msapplication-TileImage" content="assets/icons/icon-144x144.png">
+    
+    <!-- Для старых IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO: description, keywords, robots -->
+    <meta name="description" content="Коллекция генераторов для всех случаев: пароли, имена, цвета, факты, тосты, рецепты, фильмы и многое другое. Бесплатно, без регистрации.">
+    <meta name="keywords" content="генератор, паролей, имён, цветов, случайных чисел, фактов, комплиментов, тостов, никнеймов, рецептов, заданий, фильмов">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (для Facebook, VK, LinkedIn, Pinterest, Telegram, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everyonegenerators.github.io/">
+    <meta property="og:title" content="Everyone Generators">
+    <meta property="og:description" content="Коллекция генераторов для всех случаев: пароли, имена, цвета, факты, тосты, рецепты, фильмы и многое другое.">
+    <meta property="og:image" content="https://everyonegenerators.github.io/assets/icons/icon-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="Everyone Generators">
+    <meta property="og:locale" content="ru_RU">
+    <!-- Альтернативные локали -->
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card (для X/Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://everyonegenerators.github.io/">
+    <meta name="twitter:title" content="Everyone Generators">
+    <meta name="twitter:description" content="Коллекция генераторов для всех случаев: пароли, имена, цвета, факты, тосты, рецепты, фильмы и многое другое.">
+    <meta name="twitter:image" content="https://everyonegenerators.github.io/assets/icons/icon-512x512.png">
+    <meta name="twitter:image:alt" content="Everyone Generators logo">
+    
+    <!-- Telegram (использует Open Graph, но можно указать канал) -->
+    <meta name="telegram:channel" content="@normik_chel">
+    
+    <!-- Дополнительные метатеги для мессенджеров -->
+    <meta property="al:ios:app_name" content="Everyone Generators">
+    <meta property="al:android:app_name" content="Everyone Generators">
+    
+    <!-- Фавиконки во всех размерах и форматах -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/web-app-manifest-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/web-app-manifest-512x512.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    
+    <!-- Для Windows / IE -->
+    <meta name="msapplication-square70x70logo" content="assets/icons/icon-70x70.png">
+    <meta name="msapplication-square150x150logo" content="assets/icons/icon-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="assets/icons/icon-310x150.png">
+    <meta name="msapplication-square310x310logo" content="assets/icons/icon-310x310.png">
+    
+    <!-- Структурированные данные (JSON-LD) для поисковиков -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Everyone Generators",
+        "url": "https://everyonegenerators.github.io/",
+        "description": "Коллекция генераторов для всех случаев: пароли, имена, цвета, факты, тосты, рецепты, фильмы и многое другое.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://everyonegenerators.github.io/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": ["ru", "en"]
+    }
+    </script>
+    
+    <!-- CSS стили (последними для приоритета) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
