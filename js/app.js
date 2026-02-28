@@ -19,21 +19,25 @@ function updateThemeButton() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
     const isDark = document.body.classList.contains('dark-theme');
-    // Используем переводы – они уже загружены
     btn.textContent = isDark ? I18n.t('theme_toggle_light') : I18n.t('theme_toggle_dark');
 }
 
 // ========== Основная логика ==========
 document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Сначала загружаем язык (чтобы переводы были доступны)
-    const savedLang = localStorage.getItem('lang') || 'ru';
+    // 1. Загружаем язык с проверкой на валидность
+    let savedLang = localStorage.getItem('lang');
+    // Если сохранённое значение не 'ru' и не 'en' (например, 'undefined'), сбрасываем на 'ru'
+    if (savedLang !== 'ru' && savedLang !== 'en') {
+        savedLang = 'ru';
+        localStorage.setItem('lang', 'ru');
+    }
     await I18n.loadLanguage(savedLang);
 
-    // 2. Применяем тему (класс и текст кнопки с переводами)
+    // 2. Применяем тему
     applyTheme();
     updateThemeButton();
 
-    // 3. Обновляем остальной текст интерфейса
+    // 3. Обновляем текст интерфейса
     updateUILanguage();
 
     // 4. Строим меню генераторов
@@ -60,16 +64,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadGenerator(Generators.list[0]);
     }
 
-    // 6. Обработчики переключения языка
+    // 6. Обработчики переключения языка (исправлено: e.currentTarget вместо e.target)
     document.querySelectorAll('.lang-switcher button').forEach(btn => {
         btn.addEventListener('click', async (e) => {
-            const lang = e.target.dataset.lang;
+            const lang = e.currentTarget.dataset.lang; // всегда берём у кнопки
             localStorage.setItem('lang', lang);
             await I18n.loadLanguage(lang);
             updateUILanguage();
             const activeGenerator = document.querySelector('#generators-menu a.active')?.dataset.generator;
             if (activeGenerator) loadGenerator(activeGenerator);
-            updateThemeButton(); // обновить текст кнопки темы
+            updateThemeButton();
         });
     });
 
