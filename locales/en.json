@@ -72,8 +72,7 @@
         "max_label": "Max:",
         "generate_button": "Random number",
         "result_label": "Result:"
-    }
-	,
+    },
     "fact": {
         "generate_button": "Random Fact",
         "result_label": "Fact:",
