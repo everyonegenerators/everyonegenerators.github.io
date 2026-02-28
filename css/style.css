@@ -299,3 +299,8 @@ footer {
     pointer-events: none;     /* чтобы клик шёл через картинку на ссылку */
     user-select: none;
 }
+
+.lang-switcher {
+    user-select: none;
+    -webkit-user-select: none;
+}
