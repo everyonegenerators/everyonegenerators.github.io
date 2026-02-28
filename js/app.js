@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function updateUILanguage() {
     document.getElementById('site-title').textContent = I18n.t('site_title');
+	document.getElementById('footer-terms').textContent = I18n.t('footer.terms');
+	document.getElementById('footer-privacy').textContent = I18n.t('footer.privacy');
     document.querySelectorAll('#generators-menu a').forEach(a => {
         const gen = a.dataset.generator;
         a.textContent = I18n.t(`generators.${gen}.name`);

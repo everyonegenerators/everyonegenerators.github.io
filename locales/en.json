@@ -176,5 +176,17 @@
         "message": "Page not found",
         "description": "Sorry, this page doesn't exist.",
         "button": "Back to home"
+    },
+    "footer": {
+        "terms": "Terms of Use",
+        "privacy": "Privacy Policy"
+    },
+    "tos": {
+        "title": "Terms of Use",
+        "content": "<p>These Terms of Use govern the use of the Everyone Generators website (the \"Site\"). By using the Site, you agree to these terms.</p><h2>1. General Provisions</h2><p>The Site provides a set of generators for entertainment and informational purposes. We do not guarantee the accuracy or timeliness of generated data.</p><h2>2. Intellectual Property</h2><p>All materials on the Site, including text, graphics, logos, are the property of the Site owner and are protected by copyright.</p><h2>3. Limitation of Liability</h2><p>We are not liable for any damages arising from the use or inability to use the Site.</p><h2>4. Changes to Terms</h2><p>We reserve the right to modify these terms at any time without prior notice. Continued use of the Site constitutes acceptance of the new terms.</p><h2>5. Governing Law</h2><p>These terms are governed by the laws of the Russian Federation.</p>"
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "content": "<p>This Privacy Policy describes how your information is collected, used, and disclosed when you use the Everyone Generators Site.</p><h2>1. Information Collection</h2><p>We may collect the following types of information:</p><ul><li><strong>Usage Data:</strong> information about your interactions with the Site, including IP address, browser type, pages visited, time and date.</li><li><strong>Cookies and similar technologies:</strong> we use cookies to improve the Site and collect analytics.</li></ul><h2>2. Use of Information</h2><p>Collected information is used to:</p><ul><li>Operate and improve the Site;</li><li>Collect anonymous statistics via Yandex.Metrica and Google Analytics;</li><li>Prevent abuse and ensure security.</li></ul><h2>3. Third-Party Disclosure</h2><p>We share anonymized usage data with Yandex.Metrica and Google Analytics. These services may use cookies and collect data according to their own privacy policies.</p><h2>4. Your Rights</h2><p>You can disable cookies in your browser settings. This may affect Site functionality.</p><h2>5. Policy Changes</h2><p>We may update this policy from time to time. We encourage you to review it periodically.</p><h2>6. Contact</h2><p>If you have questions, please contact us via social media links on the Site.</p>"
     }
 }

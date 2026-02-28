@@ -21,4 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('404-message').textContent = I18n.t('404.message');
     document.getElementById('404-description').textContent = I18n.t('404.description');
     document.getElementById('404-button').textContent = I18n.t('404.button');
+	document.getElementById('footer-terms').textContent = I18n.t('footer.terms');
+	document.getElementById('footer-privacy').textContent = I18n.t('footer.privacy');
 });
