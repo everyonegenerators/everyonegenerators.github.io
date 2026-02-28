@@ -221,4 +221,6 @@ footer {
     height: 2.2rem;
     width: auto;
     margin-right: 10px;
+    max-width: 40px;
+    margin-right: 8px;
 }
