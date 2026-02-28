@@ -1,10 +1,11 @@
 // ========== Управление темой ==========
-function initTheme() {
+function applyTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
     }
-    updateThemeButton();
 }
 
 function toggleTheme() {
@@ -18,20 +19,24 @@ function updateThemeButton() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
     const isDark = document.body.classList.contains('dark-theme');
-    btn.textContent = isDark ? '☀️ Светлая' : '🌙 Тёмная';
+    // Используем переводы – они уже загружены
+    btn.textContent = isDark ? I18n.t('theme_toggle_light') : I18n.t('theme_toggle_dark');
 }
 
 // ========== Основная логика ==========
 document.addEventListener('DOMContentLoaded', async () => {
-    // Инициализация темы (должна быть до остального, чтобы сразу применить цвета)
-    initTheme();
-
-    // Загружаем язык по умолчанию
+    // 1. Сначала загружаем язык (чтобы переводы были доступны)
     const savedLang = localStorage.getItem('lang') || 'ru';
     await I18n.loadLanguage(savedLang);
+
+    // 2. Применяем тему (класс и текст кнопки с переводами)
+    applyTheme();
+    updateThemeButton();
+
+    // 3. Обновляем остальной текст интерфейса
     updateUILanguage();
 
-    // Построить меню генераторов
+    // 4. Строим меню генераторов
     const menu = document.getElementById('generators-menu');
     Generators.list.forEach(generatorKey => {
         const li = document.createElement('li');
@@ -49,13 +54,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         menu.appendChild(li);
     });
 
-    // Загрузить первый генератор
+    // 5. Загружаем первый генератор
     if (Generators.list.length) {
         document.querySelector(`#generators-menu a[data-generator="${Generators.list[0]}"]`).classList.add('active');
         loadGenerator(Generators.list[0]);
     }
 
-    // Обработчики переключения языка
+    // 6. Обработчики переключения языка
     document.querySelectorAll('.lang-switcher button').forEach(btn => {
         btn.addEventListener('click', async (e) => {
             const lang = e.target.dataset.lang;
@@ -64,10 +69,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             updateUILanguage();
             const activeGenerator = document.querySelector('#generators-menu a.active')?.dataset.generator;
             if (activeGenerator) loadGenerator(activeGenerator);
+            updateThemeButton(); // обновить текст кнопки темы
         });
     });
 
-    // Обработчик переключения темы
+    // 7. Обработчик переключения темы
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', toggleTheme);

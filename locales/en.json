@@ -1,6 +1,8 @@
 {
     "site_title": "Everyone Generators",
     "loading": "Loading...",
+    "theme_toggle_light": "☀️ Light",
+    "theme_toggle_dark": "🌙 Dark",
     "generators": {
         "password": {
             "name": "Password Generator",
