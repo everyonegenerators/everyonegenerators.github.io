@@ -265,3 +265,34 @@ footer {
 .lang-switcher button {
     width: 80px; /* или другая фиксированная ширина */
 }
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    line-height: 0;          /* убирает лишние отступы */
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.2s;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;     /* чтобы клик шёл через картинку на ссылку */
+    user-select: none;
+}
