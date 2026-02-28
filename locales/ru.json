@@ -1,0 +1,46 @@
+{
+    "site_title": "Генераторы для всех",
+    "loading": "Загрузка...",
+    "generators": {
+        "password": {
+            "name": "Генератор паролей",
+            "description": "Создайте надёжный пароль"
+        },
+        "color": {
+            "name": "Случайный цвет",
+            "description": "Сгенерируйте случайный HEX-цвет"
+        },
+        "name": {
+            "name": "Генератор имён",
+            "description": "Придумайте имя для персонажа"
+        },
+        "number": {
+            "name": "Случайное число",
+            "description": "Получите случайное число в диапазоне"
+        }
+    },
+    "password": {
+        "length_label": "Длина пароля:",
+        "include_numbers": "Включать цифры",
+        "include_symbols": "Включать символы",
+        "generate_button": "Сгенерировать",
+        "result_label": "Ваш пароль:"
+    },
+    "color": {
+        "generate_button": "Случайный цвет",
+        "result_label": "HEX:"
+    },
+    "name": {
+        "gender_label": "Пол:",
+        "male": "Мужской",
+        "female": "Женский",
+        "generate_button": "Сгенерировать имя",
+        "result_label": "Имя:"
+    },
+    "number": {
+        "min_label": "Минимум:",
+        "max_label": "Максимум:",
+        "generate_button": "Случайное число",
+        "result_label": "Результат:"
+    }
+}

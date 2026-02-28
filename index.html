@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyone Generators</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1 id="site-title">Everyone Generators</h1>
+        <div class="lang-switcher">
+            <button data-lang="ru">RU</button>
+            <button data-lang="en">EN</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="generators-menu">
+            <!-- Пункты меню будут сгенерированы динамически из JS -->
+        </ul>
+    </nav>
+
+    <main>
+        <div id="generator-container">
+            <!-- Сюда будет подгружаться интерфейс выбранного генератора -->
+            <p id="loading">Loading...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Everyone Generators</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/generators.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

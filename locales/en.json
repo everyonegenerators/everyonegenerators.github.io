@@ -1,0 +1,46 @@
+{
+    "site_title": "Everyone Generators",
+    "loading": "Loading...",
+    "generators": {
+        "password": {
+            "name": "Password Generator",
+            "description": "Create a strong password"
+        },
+        "color": {
+            "name": "Random Color",
+            "description": "Generate a random HEX color"
+        },
+        "name": {
+            "name": "Name Generator",
+            "description": "Generate a name for a character"
+        },
+        "number": {
+            "name": "Random Number",
+            "description": "Get a random number in range"
+        }
+    },
+    "password": {
+        "length_label": "Password length:",
+        "include_numbers": "Include numbers",
+        "include_symbols": "Include symbols",
+        "generate_button": "Generate",
+        "result_label": "Your password:"
+    },
+    "color": {
+        "generate_button": "Random color",
+        "result_label": "HEX:"
+    },
+    "name": {
+        "gender_label": "Gender:",
+        "male": "Male",
+        "female": "Female",
+        "generate_button": "Generate name",
+        "result_label": "Name:"
+    },
+    "number": {
+        "min_label": "Min:",
+        "max_label": "Max:",
+        "generate_button": "Random number",
+        "result_label": "Result:"
+    }
+}
