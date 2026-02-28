@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /pinterest-9713b.html
+Disallow: /yandex_6c668ee7881f297b.html
+Disallow: /404.html
+
+Sitemap: https://everyonegenerators.github.io/sitemap.xml
