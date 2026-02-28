@@ -6,6 +6,7 @@ function applyTheme() {
     } else {
         document.body.classList.remove('dark-theme');
     }
+    updateXIcon(); // Обновляем иконку X при применении темы
 }
 
 function toggleTheme() {
@@ -13,6 +14,7 @@ function toggleTheme() {
     const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
     updateThemeButton();
+    updateXIcon(); // Обновляем иконку X при переключении темы
 }
 
 function updateThemeButton() {
@@ -20,6 +22,14 @@ function updateThemeButton() {
     if (!btn) return;
     const isDark = document.body.classList.contains('dark-theme');
     btn.textContent = isDark ? I18n.t('theme_toggle_light') : I18n.t('theme_toggle_dark');
+}
+
+// ========== Адаптивная иконка X ==========
+function updateXIcon() {
+    const xLink = document.querySelector('a[href*="x.com"] img, a[href*="twitter.com"] img');
+    if (!xLink) return;
+    const isDark = document.body.classList.contains('dark-theme');
+    xLink.src = isDark ? 'assets/socials/x-light.svg' : 'assets/socials/x.svg';
 }
 
 // ========== Основная логика ==========
@@ -64,10 +74,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadGenerator(Generators.list[0]);
     }
 
-    // 6. Обработчики переключения языка (исправлено: e.currentTarget вместо e.target)
+    // 6. Обработчики переключения языка
     document.querySelectorAll('.lang-switcher button').forEach(btn => {
         btn.addEventListener('click', async (e) => {
-            const lang = e.currentTarget.dataset.lang; // всегда берём у кнопки
+            const lang = e.currentTarget.dataset.lang;
             localStorage.setItem('lang', lang);
             await I18n.loadLanguage(lang);
             updateUILanguage();
