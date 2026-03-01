@@ -1,4 +1,4 @@
-const CACHE_NAME = 'everyone-generators-v7';
+const CACHE_NAME = 'everyone-generators-v8';
 const urlsToCache = [
   './',
   './index.html',
