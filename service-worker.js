@@ -1,4 +1,4 @@
-const CACHE_NAME = 'everyone-generators-v4';
+const CACHE_NAME = 'everyone-generators-v5';
 const urlsToCache = [
   './',
   './index.html',
@@ -52,6 +52,8 @@ const urlsToCache = [
   './assets/socials/bluesky.svg',
   './assets/socials/facebook.svg',
   './assets/socials/instagram.svg'
+  './assets/screenshots/desktop.png'
+  './assets/screenshots/mobile.png'
 ];
 
 // Установка сервис-воркера и кэширование ресурсов
