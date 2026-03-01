@@ -52,7 +52,7 @@ const urlsToCache = [
   './assets/socials/bluesky.svg',
   './assets/socials/facebook.svg',
   './assets/socials/instagram.svg'
-  './assets/screenshots/desktop.png'
+  './assets/screenshots/desktop.png',
   './assets/screenshots/mobile.png'
 ];
 
